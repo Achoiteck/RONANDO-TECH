@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RONANDO.TECH-PORTFOLIO</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+    html{
+scroll-behavior:smooth;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+overflow-x:hidden;
+
+}
+
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+header{
+background:#38bdf8;
+padding:20px;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:black;
+}
+
+.nav-links{
+display:flex;
+list-style:none;
+gap:20px;
+}
+
+.nav-links a{
+text-decoration:none;
+font-weight:bold;
+color:black;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:white;
+}
+
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:80px 10%;
+min-height:100vh;
+gap:40px;
+}
+
+.hero-content{
+max-width:600px;
+}
+
+.hero-content h1{
+font-size:55px;
+}
+
+.hero-content span{
+color:#38bdf8;
+} 
+
+.hero-content p{
+margin:20px 0;
+line-height:1.8;
+}
+
+.hero-content h1,
+.hero-content h2,
+.hero-content p{
+color:white;
+}
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:80px 10%;
+    min-height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1920&q=80');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    color:white;
+}
+
+.btn{
+display:inline-block;
+padding:12px 25px;
+background:#38bdf8;
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+transition:0.3s;
+margin:5px;
+}
+
+.btn:hover{
+background:black;
+color:white;
+transform:translateY(-3px);
+}
+
+.secondary{
+background:transparent;
+border:2px solid #38bdf8;
+}
+
+.hero-image img{
+width:100%;
+max-width:400px;
+height:auto;
+border-radius:50%;
+border:5px solid #38bdf8;
+object-fit:cover;
+}
+
+section{
+padding:80px 10%;
+}
+
+.title{
+text-align:center;
+margin-bottom:40px;
+font-size:40px;
+}
+
+.skills-grid,
+.project-grid,
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.skill,
+.service{
+background:black;
+color:white;
+padding:30px;
+text-align:center;
+border-radius:10px;
+}
+
+.stats-section{
+    padding:60px 0;
+    background:#0f172a;
+    overflow:hidden;
+}
+
+.stats-marquee{
+    width:100%;
+    overflow:hidden;
+}
+
+.stats-track{
+    display:flex;
+    gap:25px;
+    width:max-content;
+    animation:scrollStats 18s linear infinite;
+}
+
+.project1-card{
+    min-width:250px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    transition:0.4s;
+}
+
+.project1-card:hover{
+    transform:translateY(-10px);
+}
+
+.project1-card h2{
+    font-size:45px;
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.project1-card p{
+    font-size:18px;
+    color:#333;
+    font-weight:bold;
+}
+.stats-track:hover{
+    animation-play-state:paused;
+}
+
+@keyframes scrollStats{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+.project-card{
+background:#1e293b;
+color:white;
+border-radius:10px;
+overflow:hidden;
+transition:0.4s;
+}
+
+.project-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.project-card h3,
+.project-card p{
+padding:15px;
+}
+
+.project-card a{
+display:block;
+padding:15px;
+background:#38bdf8;
+color:white;
+text-decoration:none;
+text-align:center;
+}
+
+.project-card:hover,
+.service:hover,
+.skill:hover{
+transform:translateY(-10px);
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.service i{
+font-size:40px;
+margin-bottom:15px;
+color:#38bdf8;
+}
+
+.stats{
+display:flex;
+justify-content:space-around;
+text-align:center;
+padding:50px;
+background:#38bdf8;
+}
+
+.stats h2{
+font-size:40px;
+}
+
+form{
+max-width:600px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input,
+textarea{
+padding:15px;
+border:2px solid black;
+border-radius:5px;
+font-size:16px;
+}
+
+button{
+padding:15px;
+background:#38bdf8;
+color:white;
+border:none;
+cursor:pointer;
+font-size:16px;
+}
+
+footer{
+background:#111827;
+color:white;
+padding:30px;
+text-align:center;
+}
+
+.socials a{
+color:white;
+font-size:25px;
+margin:0 10px;
+transition:0.3s;
+}
+
+.socials a:hover{
+color:#38bdf8;
+}
+
+/* TABLETS */
+@media (max-width: 992px){
+
+.hero{
+flex-direction:column-reverse;
+text-align:center;
+padding:60px 5%;
+}
+
+.hero-content h1{
+font-size:45px;
+}
+
+.hero-image img{
+max-width:300px;
+}
+
+.stats{
+flex-wrap:wrap;
+gap:20px;
+}
+
+}
+
+/* PHONES */
+@media (max-width: 768px){
+
+header{
+padding:15px;
+}
+
+nav{
+flex-direction:column;
+gap:15px;
+}
+
+.nav-links{
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+}
+
+.hero{
+padding:40px 5%;
+}
+
+.hero-content h1{
+font-size:32px;
+}
+
+.hero-content h2{
+font-size:22px;
+}
+
+.hero-content p{
+font-size:15px;
+}
+
+.hero-image img{
+max-width:220px;
+}
+
+.skills-grid,
+.project-grid,
+.service-grid{
+grid-template-columns:1fr;
+}
+
+.stats{
+flex-direction:column;
+gap:20px;
+padding:30px;
+}
+
+.stats h2{
+font-size:30px;
+}
+
+.title{
+font-size:30px;
+}
+
+section{
+padding:60px 5%;
+}
+
+input,
+textarea,
+button{
+width:100%;
+}
+
+footer{
+padding:20px;
+}
+
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px){
+
+.logo{
+font-size:22px;
+}
+
+.hero-content h1{
+font-size:28px;
+}
+
+.hero-content h2{
+font-size:18px;
+}
+
+.btn{
+display:block;
+margin:10px auto;
+width:200px;
+}
+
+.hero-image img{
+max-width:180px;
+}
+
+.title{
+font-size:26px;
+}
+
+}
+</style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">RONANDO.TECH</div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>Hello, I'm <span>Ronando.Tech</span></h1>
+        <h2><span id="typing"></span></h2>
+
+        <p>
+            Professional Web Developer specializing in HTML, CSS,
+            JavaScript and responsive modern websites.
+        </p>
+
+        <a href="#projects" class="btn">View Projects</a>
+        <a href="#contact" class="btn secondary">Hire Me</a>
+    </div>
+
+    <div class="hero-image">
+        <img class="pic" src="pic22.jpg" width="700px" height="500px">
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="project1-card">
+    <h2 class="title">About Me</h2>
+
+    <div class="about-content">
+        <h3>
+            I am a passionate Web Developer with strong experience in
+            HTML5, CSS3, JavaScript and modern frontend technologies.
+            I enjoy creating responsive and user-friendly websites that
+            solve real-world problems.
+        </h3><br>
+
+        <p>
+            My goal is to become a leading software engineer and provide
+            innovative digital solutions for businesses and organizations.
+        </p>
+    </div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+    <h2 class="title">Skills</h2>
+
+    <div class="skills-grid">
+        <div class="skill">HTML5 7/10</div>
+        <div class="skill">CSS3 6/10</div>
+        <div class="skill">JavaScript 3/10</div>
+        <div class="skill">Git & GitHub</div>
+        <div class="skill">UI/UX Design</div>
+        <div class="skill">Responsive Design</div>
+    </div>
+</section>
+
+<section class="stats-section">
+
+    <div class="stats-marquee">
+
+        <div class="stats-track">
+
+            <div class="project1-card">
+                <h2>4+</h2>
+                <p>Projects Completed</p>
+            </div>
+
+            <div class="project1-card">
+                <h2>1+</h2>
+                <p>Years Learning</p>
+            </div>
+
+            <div class="project1-card">
+                <h2>80%</h2>
+                <p>Passion For Coding</p>
+            </div>
+
+            <!-- Duplicate cards for smooth scrolling -->
+            <div class="project1-card">
+                <h2>4+</h2>
+                <p>Projects Completed</p>
+            </div>
+
+            <div class="project1-card">
+                <h2>1+</h2>
+                <p>Years Learning</p>
+            </div>
+
+            <div class="project1-card">
+                <h2>80%</h2>
+                <p>Passion For Coding</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- PROJECTS -->
+<section id="projects">
+    <h2 class="title">Projects</h2>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <img class="pic" src="pic44.jpg">
+            <h3>Agri-Connect</h3>
+            <p>Marketplace connecting farmers and buyers.</p>
+            <a href="#">Live Demo</a>
+        </div>
+
+        <div class="project-card">
+    <img class="pic" src="pic.jpg">
+    <h3>Cashier POS System</h3>
+    <p>
+            A modern web-based POS system designed for retail stores and businesses.
+            Features include sales management, inventory tracking, customer records,
+            invoice generation, and real-time reporting.
+        </p>
+    <a href="#">Live Demo</a>
+</div>
+
+<div class="project-card">
+    <img class="pic" src="pic33.jpg">
+    <h3>Motorcycle Taxi Booking</h3>
+    <p>Ride-booking system with fare calculation.</p>
+    <a href="#">Live Demo</a>
+</div>
+
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2 class="title">Services</h2>
+
+    <div class="service-grid">
+        <div class="service">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Web Design</h3>
+        </div>
+
+        <div class="service">
+            <i class="fas fa-code"></i>
+            <h3>Frontend Development</h3>
+        </div>
+
+        <div class="service">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>Responsive Design</h3>
+        </div>
+
+        <div class="service">
+            <i class="fas fa-tools"></i>
+            <h3>Website Maintenance</h3>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2 class="title">Contact Me</h2>
+
+    <form action="https://formsubmit.co/achoiteckranado5@gmail.com" method="POST">
+
+        <input type="text" name="name" placeholder="Full Name" required>
+
+        <input type="email" name="email" placeholder="Email Address" required>
+
+        <textarea name="message" placeholder="Message" required></textarea>
+
+        <input type="hidden" name="_subject" value="New Message From RONANDO.TECH Portfolio">
+
+        <input type="hidden" name="_captcha" value="false">
+
+        <button type="submit">Send Message</button>
+
+        <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+
+        <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+
+    </form>
+</section>
+</section>
+
+
+
+    <footer>
+<h3>RONANDO.TECH</h3>
+
+<p>
+Professional Web Developer specializing in
+HTML, CSS and JavaScript.
+</p>
+
+<div class="socials">
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-github"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+<a href="#"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+<p>© 2026 RONANDO.TECH. All Rights Reserved.</p>
+</footer>
+
+<script>
+    const words = [
+"Web Developer",
+"Frontend Developer",
+"JavaScript Developer",
+"UI/UX Designer"
+];
+
+let i = 0;
+let j = 0;
+let currentWord = "";
+let isDeleting = false;
+
+function type() {
+
+currentWord = words[i];
+
+if(isDeleting){
+j--;
+}else{
+j++;
+}
+
+document.getElementById("typing").textContent =
+currentWord.substring(0,j);
+
+if(!isDeleting && j === currentWord.length){
+isDeleting = true;
+
+setTimeout(type,1500);
+return;
+}
+
+if(isDeleting && j === 0){
+isDeleting = false;
+i++;
+
+if(i === words.length){
+i = 0;
+}
+}
+
+setTimeout(type,isDeleting ? 80 : 120);
+}
+
+type();
+</script>
+
+</body>
+</html>
